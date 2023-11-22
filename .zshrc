@@ -5,9 +5,17 @@ alias ssh-desktop='ssh sebastian@slindholm.com'
 
 #Eval
 eval "$(starship init zsh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+# Zap
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+# Load and initialise completion system
+autoload -Uz compinit
+compinit
 
 #Plugins
-plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-autosuggestions"
-plug "esc/conda-zsh-completion"
-plug "zsh-users/zsh-syntax-highlighting" "122dc46"
+plug "zap-zsh/supercharge"
+#plug "zap-zsh/zap-prompt"
+plug "zsh-users/zsh-syntax-highlighting"
